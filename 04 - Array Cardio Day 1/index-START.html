@@ -35,7 +35,6 @@
     // 1. Filter the list of inventors for those who were born in the 1500's
     const born = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
     const bornmap = born.map(inventor => `${inventor.first} ${inventor.last}`);
-    console.log(born);
     console.log(bornmap);
   
     // Array.prototype.map()
@@ -79,7 +78,14 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const sum = data.reduce((obj, item) => {
+      if(!obj[item]){
+        obj[item] = 0;
+      } 
+      obj[item]++;
+      return obj; 
+    }, {});
+    console.log(sum);
   </script>
 </body>
 </html>
