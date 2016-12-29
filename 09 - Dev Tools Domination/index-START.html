@@ -17,29 +17,67 @@
       p.style.fontSize = '50px';
     }
 
-    // Regular
+    // Regular console log
+    console.log('hello');
 
     // Interpolated
+    myVar = 'variable'; 
+    console.log(`im a ${myVar}`); // es6
 
     // Styled
-
+    console.log('%c im a styled text', 'color: red; background: yellow');
+    
     // warning!
+    console.warn("WARNING!");
 
     // Error :|
+    console.error("ERROR!");
 
     // Info
+    console.info(" <inserts fun fact>");
 
     // Testing
-
+    console.assert(1===3, 'that is wrong'); // displays only when it's wrong
+    
     // clearing
+    // console.clear(); // just to mess around 
 
     // Viewing DOM Elements
+    const p = document.querySelector('p');
+    // console.log(p); // displays the actual element 
+    console.dir(p); // this would displays all of the associated elements 
 
     // Grouping together
+    dogs.forEach(dog => { 
+      console.groupCollapsed(`${dog.name}`); // group by name 
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`); // end of group 
+    });
 
     // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
 
     // timing
+    console.time('feeeeeeetch something');
+    fetch('https://api.github.com')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
 
   </script>
 </body>
